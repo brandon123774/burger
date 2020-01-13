@@ -1,13 +1,9 @@
-// Importmysql
+// Import mysql
 var connection = require("../config/connection.js");
 
-//pass values using question marks to write queries
-function printQuestionMarks(num) {
-    var arr = [];
-  
-    for (var i = 0; i < num; i++) {
-      arr.push("?");
-    }
-  
-    return arr.toString();
-  }
+selectAll();
+insertOne();
+updateOne();
+
+// Export connection for ORM
+module.exports = connection;
