@@ -26,4 +26,4 @@ var burger = {
 
 };
 //export for the controller.js file
-module.exports - burger;
+module.exports = burger;
