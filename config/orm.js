@@ -13,7 +13,7 @@ function printQuestionMarks(num) {
 }
 
 // another helper function
-function objectToSql(ob) {
+function objToSql(ob) {
 	var arr = [];
 
 	for (var key in ob) {
