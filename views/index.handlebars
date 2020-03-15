@@ -31,12 +31,12 @@
         <ul>
           <center>
             {{#each burgers}}
-            {{#unless eaten}}
+            {{#unless devoured}}
 
             <strong>{{this.id}}-{{this.burger_name}}</strong>
 
             <button type="button" class="eaten btn btn-dark" data-id="{{this.id}}"
-              data-eaten="{{eaten}}">EAT</button>
+              data-eaten="{{devoured}}">EAT</button>
 
 
             <hr>
@@ -60,7 +60,7 @@
         <ul>
           <center>
             {{#each burgers}}
-            {{#if Eaten}}
+            {{#if devoured}}
             <strong>{{this.id}}- {{this.burger_name}}</strong>
             <br>
             {{/if}}
