@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">Burgers</h1>
+    <p class="lead">Order Here </p>
+    <p class="lead">Eat! </p>
+    <hr class="my-4">
+  </div>
+
+  <div class="container">
+    <center>
+      <h2>Order Here</h2>
+    </center>
+
+    <form class="form-inline my-2 my-lg-0 " id="search">
+      <input type="text" class="form-control mr-sm-2" id="burger" name="burger">
+
+
+      <button type="button" class="btn btn-dark" id="addBtn">Add A Burger</button>
+
+    </form>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+
+
+        <center>
+          <h2><u>List of Burgers Ordered</u></h2>
+        </center>
+        <br>
+        <ul>
+          <center>
+            {{#each burgers}}
+            {{#unless eaten}}
+
+            <strong>{{this.id}}-{{this.burger_name}}</strong>
+
+            <button type="button" class="eaten btn btn-dark" data-id="{{this.id}}"
+              data-eaten="{{eaten}}">EAT</button>
+
+
+            <hr>
+
+            {{/unless}}
+            {{/each}}
+
+          </center>
+        </ul>
+
+      </div>
+      <br>
+
+      <div class="col-md-6">
+        <center>
+          <h2><u>Burgers Eaten</u></h2>
+        </center>
+        <br>
+
+
+        <ul>
+          <center>
+            {{#each burgers}}
+            {{#if Eaten}}
+            <strong>{{this.id}}- {{this.burger_name}}</strong>
+            <br>
+            {{/if}}
+            {{/each}}
+          </center>
+        </ul>
+        </center>
+      </div>
+    </div>
+  </div>
+
+
+</div>
