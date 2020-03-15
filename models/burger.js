@@ -18,8 +18,8 @@ var burger = {
     },
 
     //object values variable (objColumnValues) to be used to specify any columns with their values
-    updateOne: function(objColumnValues, condition, cb)  {
-        orm.updateOne("burgers", objColumnValues, condition, function(res)  {
+    updateOne: function(objColValues, condition, cb)  {
+        orm.updateOne("burgers", objColValues, condition, function(res)  {
             cb(res);
         });
     }

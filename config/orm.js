@@ -31,28 +31,26 @@ function objToSql(ob) {
 // Create the ORM object to perform SQL queries
 var orm = {
 	// Function that returns all table entries
-	selectAll: function(tableInput, cb) {
+	selectAll: function(table, cb) {
 
 		// Construct the query string that returns all rows from the target table
-		var queryString = "SELECT * FROM " + tableInput + ";";
+		var queryString = "SELECT * FROM " + table + ";";
 
 		//database query
 		connection.query(queryString, function(err, result) {
 			if (err) {
 				throw err;
 			}
-
 			// callback
 			cb(result);
 		});
 	},
 
 	// Function that insert a single table entry
-	insertOne: function(tableInput, cols, vals, cb) {
+	insertOne: function(table, cols, vals, cb) {
 
 		// Construct the query string that inserts a single row into the target table
 			var queryString = "INSERT INTO " + tableInput + " (" + cols.toString() + ") " + "VALUES (" + printQuestionMarks(vals.length) + ") ";
-	
 			console.log(queryString);
 			connection.query(queryString, vals, function (err, result) {
 				if (err) {
@@ -63,9 +61,8 @@ var orm = {
 		},
 
 	//Update the table values
-		updateOne: function (tableInput, objColVals, condition, cb) {
-			var queryString = "UPDATE " + tableInput + " SET " + objToSql(objColVals) + " WHERE " + condition;
-	
+		updateOne: function (table, objColVals, condition, cb) {
+			var queryString = "UPDATE " + table + " SET " + objToSql(objColVals) + " WHERE " + condition;
 			console.log( queryString);
 			connection.query(queryString, function (err, result) {
 				if (err) {
