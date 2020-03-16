@@ -6,6 +6,7 @@ $(function () {
     var newDevoured = {
         devoured: 1
     }
+
     // burgers
     $.ajax("/api/burgers/" + id, {
         type: "PUT",
@@ -16,6 +17,7 @@ $(function () {
         }
     )
     })
+    
     //button for burgers
     $("#addBtn").on("click", function (event) {
         event.preventDefault();

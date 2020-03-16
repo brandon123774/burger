@@ -1,7 +1,7 @@
 //import orm file
 var orm = require("../config/orm");
 
-//create the object: a burger
+//create the object-> burger
 var burger = {
     selectAll: function (cb)    {
         //need to select all of the burgers in the table

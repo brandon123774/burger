@@ -50,7 +50,7 @@ var orm = {
 	insertOne: function(table, cols, vals, cb) {
 
 		// Construct the query string that inserts a single row into the target table
-			var queryString = "INSERT INTO " + tableInput + " (" + cols.toString() + ") " + "VALUES (" + printQuestionMarks(vals.length) + ") ";
+			var queryString = "INSERT INTO " + table + " (" + cols.toString() + ") " + "VALUES (" + printQuestionMarks(vals.length) + ") ";
 			console.log(queryString);
 			connection.query(queryString, vals, function (err, result) {
 				if (err) {
